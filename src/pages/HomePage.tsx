@@ -21,7 +21,7 @@ const HomePage: React.FC = () => {
       
       <div className="z-10 text-center flex flex-col items-center">
         <h1 className="text-6xl font-bold text-white mb-8">
-          Work fast in <span className="text-blue-400">AI speed</span>
+          Work Fast in <span className="text-blue-400">AI Speed</span>
         </h1>
         
         <div className="w-full h-[60px]" />
