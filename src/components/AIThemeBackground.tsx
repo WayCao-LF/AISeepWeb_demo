@@ -38,7 +38,7 @@ const AIThemeBackground: React.FC<AIThemeBackgroundProps> = ({ className = '' })
           size: Math.random() * 3 + 1,
           speedX: Math.random() * 2 - 1,
           speedY: Math.random() * 2 - 1,
-          color: `rgba(100, 210, 255, ${Math.random() * 0.5 + 0.1})`
+          color: `rgba(220, 220, 220, ${Math.random() * 0.3 + 0.1})`
         });
       }
       return particles;
@@ -50,8 +50,8 @@ const AIThemeBackground: React.FC<AIThemeBackgroundProps> = ({ className = '' })
       
       // 添加遮罩效果
       const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-      gradient.addColorStop(0, 'rgba(30, 10, 60, 0.6)');
-      gradient.addColorStop(1, 'rgba(10, 30, 80, 0.6)');
+      gradient.addColorStop(0, 'rgba(240, 240, 255, 0.2)');
+      gradient.addColorStop(1, 'rgba(255, 255, 255, 0.2)');
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       
@@ -100,8 +100,8 @@ const AIThemeBackground: React.FC<AIThemeBackgroundProps> = ({ className = '' })
         canvas.height = window.innerHeight;
         
         const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-        gradient.addColorStop(0, '#1a0033');
-        gradient.addColorStop(1, '#003366');
+        gradient.addColorStop(0, '#f8f8f8');
+        gradient.addColorStop(1, '#ffffff');
         ctx.fillStyle = gradient;
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         setImageLoaded(true);

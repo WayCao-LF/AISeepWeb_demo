@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import AIThemeBackground from '../components/AIThemeBackground';
+import AIParticleBackground from '../components/AIParticleBackground';
 
 const HomePage: React.FC = () => {
   const navigate = useNavigate();
@@ -16,7 +17,8 @@ const HomePage: React.FC = () => {
   };
 
   return (
-    <div className="relative w-screen h-screen flex flex-col items-center justify-center overflow-hidden m-0 p-0 bg-gradient-to-br from-purple-900 via-blue-800 to-gray-900 animate-gradient-x">
+    <div className="relative w-screen h-screen flex flex-col items-center justify-center overflow-hidden m-0 p-0">
+      <AIParticleBackground />
       <AIThemeBackground className="opacity-40" />
       
       <div className="z-10 text-center flex flex-col items-center">
