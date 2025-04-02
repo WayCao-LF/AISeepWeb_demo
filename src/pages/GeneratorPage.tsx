@@ -23,16 +23,19 @@ const GeneratorPage: React.FC = () => {
   return (
     <div className="min-h-screen w-screen bg-gray-900 text-white p-6 overflow-x-hidden flex flex-col items-center">
       {/* Top Icons */}
-      <div className="pt-8 pb-12 w-full flex justify-center">
+      <div className="pt-8 pb-12 w-full flex justify-center bg-white  shadow-md">
         <ConnectedIcons className="h-[150px]" />
       </div>
       
-      <div className="w-full max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 px-4">
+      <div className="h-[200px]"></div>
+      
+      <div className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-6 px-4 mt-8">
         {/* Left Form */}
-        <div className="bg-gray-800 p-5 rounded-lg shadow-lg">
+        <div className="bg-gray-800 p-6 rounded-lg shadow-lg md:col-span-2">
+        <div className="h-[20px]"></div>
           <h2 className="text-2xl font-bold mb-5 text-center">Input Information</h2>
-          
-          <div className="space-y-4">
+          <div className="h-[20px]"></div>
+          <div className="space-y-5 px-4">
             <div>
               <label htmlFor="jiraNo" className="block mb-2 text-lg">
                 JIRA Card No.
@@ -42,11 +45,11 @@ const GeneratorPage: React.FC = () => {
                 type="text"
                 value={jiraNo}
                 onChange={(e) => setJiraNo(e.target.value)}
-                className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg"
-                placeholder="e.g. PGO-123"
+                className="w-[300px] px-6 py-4 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg"
+                placeholder=" e.g. PGO-123"
               />
             </div>
-            
+            <div className="h-[20px]"></div>
             <div>
               <label htmlFor="figmaLink" className="block mb-2 text-lg">
                 Figma Link:
@@ -56,11 +59,11 @@ const GeneratorPage: React.FC = () => {
                 type="text"
                 value={figmaLink}
                 onChange={(e) => setFigmaLink(e.target.value)}
-                className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg"
-                placeholder="e.g. https://figma.com/file/..."
+                className="w-[300px] px-6 py-4 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg"
+                placeholder=" e.g. https://figma.com/file/..."
               />
             </div>
-            
+            <div className="h-[20px]"></div>
             <div>
               <label htmlFor="slackChannel" className="block mb-2 text-lg">
                 Slack Notification Channel:
@@ -70,29 +73,31 @@ const GeneratorPage: React.FC = () => {
                 type="text"
                 value={slackChannel}
                 onChange={(e) => setSlackChannel(e.target.value)}
-                className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg"
-                placeholder="e.g. #project-globeone"
+                className="w-[300px] px-6 py-4 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg"
+                placeholder=" e.g. #project-globeone"
               />
             </div>
+            <div className="h-[40px]"></div>
           </div>
         </div>
         
         {/* Middle Button */}
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center md:col-span-1">
           <button
-            className="px-8 py-4 bg-blue-500 hover:bg-blue-600 text-white text-xl font-semibold rounded-md transition-all transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-300"
+            className="w-[200px] px-12 py-6 bg-blue-500 hover:bg-blue-600 text-white text-xl font-semibold rounded-md transition-all transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-300"
             onClick={handleGenerate}
             onKeyDown={handleKeyDown}
             tabIndex={0}
             aria-label="Generate AI workflow steps"
             disabled={!jiraNo || !figmaLink || !slackChannel}
           >
-            Generation
+            <span className="px-6">Generate</span>
           </button>
         </div>
         
         {/* Right Generated Content */}
-        <div className="bg-gray-800 p-5 rounded-lg shadow-lg">
+        <div className="bg-gray-800 p-5 rounded-lg shadow-lg md:col-span-2">
+        <div className="h-[20px]"></div>
           <h2 className="text-2xl font-bold mb-5 text-center">AI Speed Workflow</h2>
           
           {generated ? (
@@ -102,66 +107,84 @@ const GeneratorPage: React.FC = () => {
                 <br />
                 Copy this prompt to your cursor or windsurf ide step by step
               </div>
-              
-              <div className="space-y-4">
-                <div className="flex items-start">
-                  <div className="flex-1">
-                    <span className="font-semibold text-lg">STEP 1:</span>
-                    <p className="text-gray-300">
+              <div className="h-[20px]"></div>
+              <div className="space-y-6">
+                {/* STEP 1 */}
+                <div className="border border-white rounded-lg p-4 relative bg-gray-700">
+                  <div className="mb-4">
+                    <span className="font-semibold text-lg text-blue-300">STEP 1:</span>
+                    <p className="text-gray-300 mt-2">
                       JIRA Fetch {jiraNo} details in PGO project, Update the JIRA card {jiraNo} status to inprogress
                     </p>
                   </div>
-                  <CopyButton text={`JIRA Fetch ${jiraNo} details in PGO project, Update the JIRA card ${jiraNo} status to inprogress`} className="ml-4" />
+                  <div className="flex justify-end mt-4">
+                    <CopyButton text={`JIRA Fetch ${jiraNo} details in PGO project, Update the JIRA card ${jiraNo} status to inprogress`} />
+                  </div>
                 </div>
-                
-                <div className="flex items-start">
-                  <div className="flex-1">
-                    <span className="font-semibold text-lg">STEP 2:</span>
-                    <p className="text-gray-300">
+                <div className="h-[20px]"></div>
+                {/* STEP 2 */}
+                <div className="border border-white rounded-lg p-4 relative bg-gray-700">
+                  <div className="mb-4">
+                    <span className="font-semibold text-lg text-blue-300">STEP 2:</span>
+                    <p className="text-gray-300 mt-2">
                       check out new branch named feature/{jiraNo} from main branch in https://github.com/WayCao-LF/ph-GlobeOne repo
                     </p>
                   </div>
-                  <CopyButton text={`check out new branch named feature/${jiraNo} from main branch in https://github.com/WayCao-LF/ph-GlobeOne repo`} className="ml-4" />
+                  <div className="flex justify-end mt-4">
+                    <CopyButton text={`check out new branch named feature/${jiraNo} from main branch in https://github.com/WayCao-LF/ph-GlobeOne repo`} />
+                  </div>
                 </div>
-                
-                <div className="flex items-start">
-                  <div className="flex-1">
-                    <span className="font-semibold text-lg">STEP 3:</span>
-                    <p className="text-gray-300">
+                <div className="h-[20px]"></div>
+                {/* STEP 3 */}
+                <div className="border border-white rounded-lg p-4 relative bg-gray-700">
+                  <div className="mb-4">
+                    <span className="font-semibold text-lg text-blue-300">STEP 3:</span>
+                    <p className="text-gray-300 mt-2">
                       Follow the card details and the figma link {figmaLink} build the pages
                     </p>
                   </div>
-                  <CopyButton text={`Follow the card details and the figma link ${figmaLink} build the pages`} className="ml-4" />
+                  <div className="flex justify-end mt-4">
+                    <CopyButton text={`Follow the card details and the figma link ${figmaLink} build the pages`} />
+                  </div>
                 </div>
-                
-                <div className="flex items-start">
-                  <div className="flex-1">
-                    <span className="font-semibold text-lg">STEP 4:</span>
-                    <p className="text-gray-300">
+                <div className="h-[20px]"></div>
+                {/* STEP 4 */}
+                <div className="border border-white rounded-lg p-4 relative bg-gray-700">
+                  <div className="mb-4">
+                    <span className="font-semibold text-lg text-blue-300">STEP 4:</span>
+                    <p className="text-gray-300 mt-2">
                       commits this changes and sumbit a PR in https://github.com/WayCao-LF/ph-GlobeOne merge current branch to main,the title and body please help me to generate refer to the commit message
                     </p>
                   </div>
-                  <CopyButton text={`commits this changes and sumbit a PR in https://github.com/WayCao-LF/ph-GlobeOne merge current branch to main,the title and body please help me to generate refer to the commit message`} className="ml-4" />
+                  <div className="flex justify-end mt-4">
+                    <CopyButton text={`commits this changes and sumbit a PR in https://github.com/WayCao-LF/ph-GlobeOne merge current branch to main,the title and body please help me to generate refer to the commit message`} />
+                  </div>
                 </div>
-                
-                <div className="flex items-start">
-                  <div className="flex-1">
-                    <span className="font-semibold text-lg">STEP 5:</span>
-                    <p className="text-gray-300">
+                <div className="h-[20px]"></div>
+                {/* STEP 5 */}
+                <div className="border border-white rounded-lg p-4 relative bg-gray-700">
+                  <div className="mb-4">
+                    <span className="font-semibold text-lg text-blue-300">STEP 5:</span>
+                    <p className="text-gray-300 mt-2">
                       send a message to the slack channel {slackChannel} : @wei.wang Please review my PR . and Attachment the PR url refer to previous action.
                     </p>
                   </div>
-                  <CopyButton text={`send a message to the slack channel ${slackChannel} : @wei.wang Please review my PR . and Attachment the PR url refer to previous action.`} className="ml-4" />
+                  <div className="flex justify-end mt-4">
+                    <CopyButton text={`send a message to the slack channel ${slackChannel} : @wei.wang Please review my PR . and Attachment the PR url refer to previous action.`} />
+                  </div>
                 </div>
-                
-                <div className="flex items-start">
-                  <div className="flex-1">
-                    <span className="font-semibold text-lg">STEP 6:</span>
-                    <p className="text-gray-300">
+                <div className="h-[20px]"></div>
+                {/* STEP 6 */}
+                <div className="border border-white rounded-lg p-4 relative bg-gray-700">
+                  <div className="mb-4">
+                    <span className="font-semibold text-lg text-blue-300">STEP 6:</span>
+                    <p className="text-gray-300 mt-2">
                       Update the JIRA card {jiraNo} status to done
                     </p>
                   </div>
-                  <CopyButton text={`Update the JIRA card ${jiraNo} status to done`} className="ml-4" />
+                  <div className="flex justify-end mt-4">
+                    <CopyButton text={`Update the JIRA card ${jiraNo} status to done`} />
+                  </div>
                 </div>
               </div>
             </div>
