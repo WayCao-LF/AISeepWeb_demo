@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import IconsBackground from '../components/IconsBackground';
+import AIThemeBackground from '../components/AIThemeBackground';
 
 const HomePage: React.FC = () => {
   const navigate = useNavigate();
@@ -16,8 +16,8 @@ const HomePage: React.FC = () => {
   };
 
   return (
-    <div className="relative w-screen h-screen flex flex-col items-center justify-center overflow-hidden bg-gray-900 m-0 p-0">
-      <IconsBackground className="opacity-30" />
+    <div className="relative w-screen h-screen flex flex-col items-center justify-center overflow-hidden m-0 p-0 bg-gradient-to-br from-purple-900 via-blue-800 to-gray-900 animate-gradient-x">
+      <AIThemeBackground className="opacity-40" />
       
       <div className="z-10 text-center flex flex-col items-center">
         <h1 className="text-6xl font-bold text-white mb-8">
