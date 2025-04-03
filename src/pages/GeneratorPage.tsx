@@ -102,7 +102,7 @@ const GeneratorPage: React.FC = () => {
           </div>
           
           {/* Right Results Panel */}
-          <div className="bg-gray-800 py-8 px-5 rounded-lg shadow-lg md:col-span-2">
+          <div className="bg-gray-800 py-8 px-5 rounded-lg shadow-lg md:col-span-2 my-4">
             <h2 className="text-2xl font-bold mb-5 text-center">AI Speed Workflow</h2>
             
             <AnimatePresence>
