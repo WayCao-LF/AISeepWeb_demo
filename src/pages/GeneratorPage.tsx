@@ -1,13 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ConnectedIcons from '../components/ConnectedIcons';
 import CopyButton from '../components/CopyButton';
 import DataFlowBackground from '../components/DataFlowBackground';
 
 const GeneratorPage: React.FC = () => {
+  const figmaLinkRef = useRef<HTMLTextAreaElement>(null);
   const [jiraNo, setJiraNo] = useState('');
   const [figmaLink, setFigmaLink] = useState('');
   const [slackChannel, setSlackChannel] = useState('');
+
+  const adjustTextareaHeight = () => {
+    if (figmaLinkRef.current) {
+      figmaLinkRef.current.style.height = 'auto';
+      figmaLinkRef.current.style.height = `${figmaLinkRef.current.scrollHeight}px`;
+    }
+  };
+
+  useEffect(() => {
+    adjustTextareaHeight();
+  }, []);
   const [generated, setGenerated] = useState(false);
 
   const handleGenerate = () => {
@@ -51,11 +63,16 @@ const GeneratorPage: React.FC = () => {
                 <label htmlFor="figmaLink" className="mb-2 text-lg text-left w-full pl-0">Figma Link:</label>
                 <textarea
                   id="figmaLink"
+                  ref={figmaLinkRef}
                   value={figmaLink}
-                  onChange={(e) => setFigmaLink(e.target.value)}
-                  className="w-full min-h-[60px] py-4 px-6 bg-gray-700 border border-gray-600 rounded-md text-left"
+                  onChange={(e) => {
+                    setFigmaLink(e.target.value);
+                    adjustTextareaHeight();
+                  }}
+                  className="w-full py-4 px-6 bg-gray-700 border border-gray-600 rounded-md text-left"
                   placeholder="e.g. https://figma.com/file/..."
                   rows={1}
+                  style={{ height: 'auto', minHeight: '60px', resize: 'none' }}
                 />
               </div>
               
