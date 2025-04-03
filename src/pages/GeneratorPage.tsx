@@ -55,7 +55,7 @@ const GeneratorPage: React.FC = () => {
                   value={jiraNo}
                   onChange={(e) => setJiraNo(e.target.value)}
                   className="w-full py-4 px-6 bg-gray-700 border border-border rounded-md text-left"
-                  placeholder="e.g. PGO-123"
+                  placeholder="e.g. NGO-123"
                 />
               </div>
               
