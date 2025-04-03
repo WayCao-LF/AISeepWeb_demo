@@ -8,7 +8,7 @@ const GeneratorPage: React.FC = () => {
   const figmaLinkRef = useRef<HTMLTextAreaElement>(null);
   const [jiraNo, setJiraNo] = useState('');
   const [figmaLink, setFigmaLink] = useState('');
-  const [slackChannel, setSlackChannel] = useState('');
+  const [slackChannel, setSlackChannel] = useState('ai-speed');
 
   const adjustTextareaHeight = () => {
     if (figmaLinkRef.current) {
@@ -23,7 +23,7 @@ const GeneratorPage: React.FC = () => {
   const [generated, setGenerated] = useState(false);
 
   const handleGenerate = () => {
-    if (jiraNo && figmaLink && slackChannel) {
+    if (jiraNo && figmaLink) {
       setGenerated(true);
     }
   };
@@ -81,10 +81,9 @@ const GeneratorPage: React.FC = () => {
                 <input
                   id="slackChannel"
                   type="text"
-                  value={slackChannel}
-                  onChange={(e) => setSlackChannel(e.target.value)}
+                  value="ai-speed"
+                  readOnly
                   className="w-full py-4 px-6 bg-gray-700 border border-gray-600 rounded-md text-left"
-                  placeholder="e.g. #project-globeone"
                 />
               </div>
             </div>
@@ -95,7 +94,7 @@ const GeneratorPage: React.FC = () => {
             <button
               className="w-full max-w-[200px] px-4 py-3 bg-blue-500 hover:bg-blue-600 text-white text-xl font-semibold rounded-md"
               onClick={handleGenerate}
-              disabled={!jiraNo || !figmaLink || !slackChannel}
+              disabled={!jiraNo || !figmaLink}
             >
               Generate
             </button>
