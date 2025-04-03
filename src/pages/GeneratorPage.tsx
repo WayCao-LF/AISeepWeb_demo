@@ -35,38 +35,38 @@ const GeneratorPage: React.FC = () => {
             <h2 className="text-2xl font-bold mb-5 text-center">Task Information</h2>
             
             <div className="space-y-5 px-6 pb-6">
-              <div className="flex flex-col">
-                <label htmlFor="jiraNo" className="mb-2 text-lg">JIRA Ticket No:</label>
+              <div className="flex flex-col items-start pl-0">
+                <label htmlFor="jiraNo" className="mb-2 text-lg text-left w-full pl-0">JIRA Ticket No:</label>
                 <input
                   id="jiraNo"
                   type="text"
                   value={jiraNo}
                   onChange={(e) => setJiraNo(e.target.value)}
-                  className="w-full py-4 px-6 bg-gray-700 border border-gray-600 rounded-md"
+                  className="w-full py-4 px-6 bg-gray-700 border border-gray-600 rounded-md text-left"
                   placeholder="e.g. PGO-123"
                 />
               </div>
               
-              <div className="flex flex-col">
-                <label htmlFor="figmaLink" className="mb-2 text-lg">Figma Link:</label>
+              <div className="flex flex-col items-start pl-0">
+                <label htmlFor="figmaLink" className="mb-2 text-lg text-left w-full pl-0">Figma Link:</label>
                 <textarea
                   id="figmaLink"
                   value={figmaLink}
                   onChange={(e) => setFigmaLink(e.target.value)}
-                  className="w-full min-h-[60px] py-4 px-6 bg-gray-700 border border-gray-600 rounded-md"
+                  className="w-full min-h-[60px] py-4 px-6 bg-gray-700 border border-gray-600 rounded-md text-left"
                   placeholder="e.g. https://figma.com/file/..."
                   rows={1}
                 />
               </div>
               
-              <div className="flex flex-col">
-                <label htmlFor="slackChannel" className="mb-2 text-lg">Slack Channel:</label>
+              <div className="flex flex-col items-start pl-0">
+                <label htmlFor="slackChannel" className="mb-2 text-lg text-left w-full pl-0">Slack Channel:</label>
                 <input
                   id="slackChannel"
                   type="text"
                   value={slackChannel}
                   onChange={(e) => setSlackChannel(e.target.value)}
-                  className="w-full py-4 px-6 bg-gray-700 border border-gray-600 rounded-md"
+                  className="w-full py-4 px-6 bg-gray-700 border border-gray-600 rounded-md text-left"
                   placeholder="e.g. #project-globeone"
                 />
               </div>
