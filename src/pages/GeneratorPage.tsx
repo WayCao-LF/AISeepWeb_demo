@@ -117,12 +117,12 @@ const GeneratorPage: React.FC = () => {
                   </div>
                   
                   {[
-                    `JIRA Fetch ${jiraNo} details in PGO project`,
-                    `Check out new branch named feature/${jiraNo}`,
-                    `Follow the figma link ${figmaLink} to build pages`,
-                    `Commit changes and submit PR`,
-                    `Notify ${slackChannel} channel`,
-                    `Update JIRA card ${jiraNo} status to done`
+                    `Use atlassian-mcp tools to update JIRA card ${jiraNo} status to inprogress,Then Fetch ${jiraNo} details in NGO project`,
+                    `Use git mcp tools to check out new branch named feature/${jiraNo} from main branch in https://github.com/WayCao-LF/ph-GlobeOne repo`,
+                    `Use figma mcp tools to follow the figma link ${figmaLink} and the ${jiraNo} details to build viewController`,
+                    `Use git mcp tools to commits current changes and submit a PR in https://github.com/WayCao-LF/ph-GlobeOne merge current branch to main branch, the title and body please help me to generate refer to the commit message`,
+                    `Use slack mcp tools to send a message to the slack channel ${slackChannel} : '@wei.wang Please review my PR' . and Attachment the PR url refer to previous action.`,
+                    `Use atlassian-mcp tools to update JIRA card ${jiraNo} status to done`
                   ].map((step, index) => (
                     <motion.div
                       key={index}
