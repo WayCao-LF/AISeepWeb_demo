@@ -79,7 +79,7 @@ const IconsBackground: React.FC<IconsBackgroundProps> = ({ className = '' }) => 
   return (
     <svg 
       ref={svgRef} 
-      className={`w-full h-full absolute top-0 left-0 ${className}`}
+      className={`w-full h-full absolute inset-0 ${className}`}
       viewBox="0 0 100% 100%"
       preserveAspectRatio="xMidYMid meet"
     />
