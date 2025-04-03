@@ -102,7 +102,7 @@ const GeneratorPage: React.FC = () => {
           
           {/* Right Results Panel */}
           <div className="bg-gray-800 py-8 px-5 rounded-lg shadow-lg md:col-span-2 my-4">
-            <h2 className="text-2xl font-bold mb-5 text-center">AI Speed Workflow</h2>
+            <h2 className="text-2xl font-bold mb-5 text-center">AI IDevSpeed Workflow</h2>
             
             <AnimatePresence>
               {generated ? (
@@ -113,7 +113,7 @@ const GeneratorPage: React.FC = () => {
                   className="space-y-5"
                 >
                   <div className="font-bold text-green-400 mb-4 text-lg text-center">
-                    Follow these steps your work will finish in AI speed:
+                    Follow these steps your work will finish in AI IDevSpeed:
                   </div>
                   
                   {[
