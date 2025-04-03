@@ -54,7 +54,7 @@ const GeneratorPage: React.FC = () => {
                   type="text"
                   value={jiraNo}
                   onChange={(e) => setJiraNo(e.target.value)}
-                  className="w-full py-4 px-6 bg-gray-700 border border-gray-600 rounded-md text-left"
+                  className="w-full py-4 px-6 bg-gray-700 border border-border rounded-md text-left"
                   placeholder="e.g. PGO-123"
                 />
               </div>
@@ -69,7 +69,7 @@ const GeneratorPage: React.FC = () => {
                     setFigmaLink(e.target.value);
                     adjustTextareaHeight();
                   }}
-                  className="w-full py-4 px-6 bg-gray-700 border border-gray-600 rounded-md text-left"
+                  className="w-full py-4 px-6 bg-gray-700 border border-border rounded-md text-left"
                   placeholder="e.g. https://figma.com/file/..."
                   rows={1}
                   style={{ height: 'auto', minHeight: '60px', resize: 'none' }}
@@ -83,7 +83,7 @@ const GeneratorPage: React.FC = () => {
                   type="text"
                   value="ai-speed"
                   readOnly
-                  className="w-full py-4 px-6 bg-gray-700 border border-gray-600 rounded-md text-left"
+                  className="w-full py-4 px-6 bg-gray-700 border border-border rounded-md text-left"
                 />
               </div>
             </div>
